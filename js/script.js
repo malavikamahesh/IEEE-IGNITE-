@@ -1,4 +1,4 @@
-﻿  // ----- starfield -----
+  // ----- starfield -----
   (function(){
     const field = document.getElementById('stars');
     const count = 70;
@@ -16,21 +16,7 @@
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
   burger.addEventListener('click', ()=>{
-    const open = navLinks.classList.toggle('mobile-open');
-    if(open){
-      navLinks.style.display='flex';
-      navLinks.style.flexDirection='column';
-      navLinks.style.position='absolute';
-      navLinks.style.top='68px';
-      navLinks.style.right='28px';
-      navLinks.style.background='rgba(15,10,28,0.97)';
-      navLinks.style.border='1px solid rgba(255,255,255,.09)';
-      navLinks.style.borderRadius='14px';
-      navLinks.style.padding='18px 26px';
-      navLinks.style.gap='16px';
-    } else {
-      navLinks.style.display='none';
-    }
+    navLinks.classList.toggle('mobile-open');
   });
 
   // close mobile nav + active link highlight on click
@@ -38,7 +24,7 @@
     a.addEventListener('click', ()=>{
       document.querySelectorAll('.nav-links a').forEach(x=>x.classList.remove('active'));
       a.classList.add('active');
-      if(window.innerWidth<=980){ navLinks.style.display='none'; navLinks.classList.remove('mobile-open'); }
+      if(window.innerWidth<=900){ navLinks.classList.remove('mobile-open'); }
     });
   });
 
